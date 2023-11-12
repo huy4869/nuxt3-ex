@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "product",
+        "status": 1
+    },
+    {
+        "id": 2,
+        "name": "product",
+        "status": 1
+    },
+    {
+        "id": 3,
+        "name": "product",
+        "status": 0
+    }
+]
