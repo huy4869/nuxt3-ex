@@ -9,13 +9,13 @@ module.exports = {
         "./error.vue",
     ],
     theme: {
-        screens: {
-            'fold': { 'max': '300px' },
-            'mobile': '320px',
-            'tablet': '640px',
-            'laptop': '1024px',
-            'desktop': '1280px',
-        },
+        // screens: {
+            // 'fold': { 'max': '300px' },
+            // 'mobile': '320px',
+            // 'tablet': '640px',
+            // 'laptop': '1024px',
+            // 'desktop': '1280px',
+        // },
         // colors: {
         //     brand: {
         //         primary: 'var(--color-emerald-500)',

@@ -36,10 +36,9 @@ console.log(toRaw(products.value))
 
         <div> {{ pending ? 'Loading' : helo }}</div>
 
-<!--        <modal-nuxtui/>-->
-            <el-button @click="ElMessage('hello')">button</el-button>
-            <ElButton :icon="ElIconEditPen" type="success">button</ElButton>
-            <LazyElButton type="warning">lazy button</LazyElButton>
+        <nuxtui-modal/>
+<!--        <nuxtui-color-mode/>-->
+        <ElButton :icon="ElIconEditPen" type="success">button</ElButton>
 
     </div>
 </template>

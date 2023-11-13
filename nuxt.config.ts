@@ -19,20 +19,21 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: [
+    '@nuxt/ui',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
+    '@nuxtjs/color-mode',
     '@element-plus/nuxt'
-    // '@nuxt/ui',
   ],
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],
   },
-  // ui: {
-  //   global: true
-  // },
-  // colorMode: {
-  //   preference: 'light'
-  // }
+  ui: {
+    global: true
+  },
+  colorMode: {
+    preference: 'light'
+  }
 })
