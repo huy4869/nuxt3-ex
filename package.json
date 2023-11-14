@@ -18,6 +18,7 @@
     "@vueuse/components": "^10.6.0",
     "@vueuse/core": "^10.6.0",
     "@vueuse/nuxt": "^10.6.0",
+    "dayjs-nuxt": "^2.1.9",
     "nuxt": "^3.8.1",
     "sass": "^1.69.5",
     "vue": "^3.3.8",

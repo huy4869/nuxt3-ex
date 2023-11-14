@@ -27,7 +27,7 @@ console.log(toRaw(products.value))
 <template>
     <div>
         <!--        <img class="logo" src="@/assets/img/nuxt.png" alt="Discover Nuxt 3" />-->
-        <header-switch-locale/>
+        <switch-locale/>
         <profile-header/>
         <alert/>
         <div @click="$router.push('/parent')">change page</div>
@@ -36,8 +36,8 @@ console.log(toRaw(products.value))
 
         <div> {{ pending ? 'Loading' : helo }}</div>
 
+        <color-mode/>
         <nuxtui-modal/>
-<!--        <nuxtui-color-mode/>-->
         <ElButton :icon="ElIconEditPen" type="success">button</ElButton>
 
     </div>

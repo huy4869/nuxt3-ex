@@ -18,6 +18,12 @@ export default defineNuxtConfig({
     }
   },
   devtools: { enabled: true },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    }
+  ],
   modules: [
     '@nuxt/ui',
     '@nuxtjs/tailwindcss',
@@ -25,7 +31,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
-    '@element-plus/nuxt'
+    '@element-plus/nuxt',
+    'dayjs-nuxt'
   ],
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],
