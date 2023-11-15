@@ -103,6 +103,7 @@
 import * as authService from '@/services/authService'
 import { resetErrorResponse } from '@/utils/validateServerError'
 import { RULE_EMAIL, RULE_PASSWORD } from '@/constants/rule-form'
+import { setNotifySuccess } from "~/services/notiService.js";
 
 const page = ref('login')
 const ruleFormRef = ref()
@@ -160,20 +161,24 @@ const pageLogin = () => {
     page.value = 'login'
 }
 
+
 const handleLogin = (ruleFormRef) => {
+    setNotifySuccess('Successful')
+
     errorResponse.value = resetErrorResponse(errorResponse)
     ruleFormRef.validate(async (valid) => {
         if (valid) {
-            try {
-                const response = await authService.handleLogin(loginForm.value)
-                if (response.status_code === 200) {
-                    await router.push({ path: '/' })
-                } else if (response.status_code === 422) {
-                    errorResponse.value = response.error_response
-                }
-            } catch (response) {
-                console.log(response)
-            }
+
+            // try {
+            //     const response = await authService.handleLogin(loginForm.value)
+            //     if (response.status_code === 200) {
+            //         await router.push({ path: '/' })
+            //     } else if (response.status_code === 422) {
+            //         errorResponse.value = response.error_response
+            //     }
+            // } catch (response) {
+            //     console.log(response)
+            // }
         } else {
             return false
         }

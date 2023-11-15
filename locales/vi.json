@@ -19,5 +19,9 @@
         "reset-description-title": "Hãy nhập mật khẩu mới",
         "back-login": "Quay về trang đăng nhập",
         "register": "Bạn chưa có tài khoản? đăng ký mới ở đây."
-    }
+    },
+    "Success" : "Thành công",
+    "Error" : "Thất bại",
+    "Info" : "Thông tin",
+    "Warning" : "Cảnh báo"
 }

@@ -23,5 +23,8 @@
         "back-login": "Quay về trang đăng nhập",
         "register": "Bạn chưa có tài khoản? đăng ký mới ở đây."
     },
-    "login.title": ""
+    "Success" : "Success",
+    "Error" : "Error",
+    "Info" : "Info",
+    "Warning" : "Warning"
 }

@@ -1,26 +1,26 @@
 <script setup>
 // composables
-const { sayHello } = UseUtils()
-sayHello()
-
-// store
-import { useCounterStore} from "~/stores/myStore.js";
-const store = useCounterStore()
-const { name, doubleCount } = storeToRefs(store)
-const { increment } = store
-console.log(name.value, doubleCount.value )
-
-// server api
-// const response = await $fetch('/api/helo')
-// console.log(response)
-
-// useFetch
-const { data: products } = await useFetch('/api/products', {
-    transform: (response) => response.data
-})
-
-const { data: helo, pending } = await useLazyFetch('/api/helo')
-console.log(toRaw(products.value))
+// const { sayHello } = UseUtils()
+// sayHello()
+//
+// // store
+// import { useCounterStore} from "~/stores/myStore.js";
+// const store = useCounterStore()
+// const { name, doubleCount } = storeToRefs(store)
+// const { increment } = store
+// console.log(name.value, doubleCount.value )
+//
+// // server api
+// // const response = await $fetch('/api/helo')
+// // console.log(response)
+//
+// // useFetch
+// const { data: products } = await useFetch('/api/products', {
+//     transform: (response) => response.data
+// })
+//
+// const { data: helo, pending } = await useLazyFetch('/api/helo')
+// console.log(toRaw(products.value))
 
 </script>
 
@@ -34,10 +34,10 @@ console.log(toRaw(products.value))
 
         <!--        <div @click="increment">add</div> {{ doubleCount}}-->
 
-        <div> {{ pending ? 'Loading' : helo }}</div>
+<!--        <div> {{ pending ? 'Loading' : helo }}</div>-->
 
-        <color-mode/>
-        <nuxtui-modal/>
+<!--        <color-mode/>-->
+<!--        <nuxtui-modal/>-->
         <ElButton :icon="ElIconEditPen" type="success">button</ElButton>
 
     </div>
