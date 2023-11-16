@@ -26,7 +26,7 @@
 <script setup>
 import imageDefault from '@/assets/images/icons/image_default.svg'
 import iconSearch from '@/assets/images/icons/icon_search.svg'
-import * as MasterService from '@/api/master-data'
+import * as MasterService from '~/api/master-data'
 
 const props = defineProps({
   icon:{

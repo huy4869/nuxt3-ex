@@ -1,5 +1,6 @@
 <template>
     <div class="auth-page">
+
         <FormAuth v-if="page === 'login'" :title="$t('login.logIn')">
             <template #form-component>
                 <el-form
@@ -17,7 +18,7 @@
                         :rule-form-ref="ruleFormRef"
                         :rules="loginRules.email"
                         :name-ref="'email'"
-                        maxlength="64"
+                        :maxlength="64"
                         :placeholder="$t('login.placeholder-email')"
                         :error-response="errorResponse.email"
                         :label="$t('login.email')"
@@ -29,7 +30,7 @@
                         :rule-form-ref="ruleFormRef"
                         :rules="loginRules.password"
                         :name-ref="'password'"
-                        maxlength="64"
+                        :maxlength="64"
                         :placeholder="$t('login.placeholder-password')"
                         :error-response="errorResponse.password"
                         :label="$t('login.password')"
@@ -103,7 +104,6 @@
 import * as authService from '@/services/authService'
 import { resetErrorResponse } from '@/utils/validateServerError'
 import { RULE_EMAIL, RULE_PASSWORD } from '@/constants/rule-form'
-import { setNotifySuccess } from "~/services/notiService.js";
 
 const page = ref('login')
 const ruleFormRef = ref()
@@ -111,13 +111,12 @@ const ruleForgotFormRef = ref()
 const isForgotPassword = ref(true)
 const errorResponse = ref({})
 const loginForm = ref({
-    email: '',
-    password: '',
+    email: 'tvhtranviethuy1@gmail.com',
+    password: 'Viethuy15@@',
 })
 
 const loginRules = computed(() => {
     return {
-        email: RULE_EMAIL('login.email'),
         password: RULE_PASSWORD,
     }
 })
@@ -163,22 +162,21 @@ const pageLogin = () => {
 
 
 const handleLogin = (ruleFormRef) => {
-    setNotifySuccess('Successful')
-
     errorResponse.value = resetErrorResponse(errorResponse)
     ruleFormRef.validate(async (valid) => {
         if (valid) {
 
-            // try {
-            //     const response = await authService.handleLogin(loginForm.value)
-            //     if (response.status_code === 200) {
-            //         await router.push({ path: '/' })
-            //     } else if (response.status_code === 422) {
-            //         errorResponse.value = response.error_response
-            //     }
-            // } catch (response) {
-            //     console.log(response)
-            // }
+            try {
+                const response = await authService.handleLogin({...loginForm.value})
+                console.log(response.data.value)
+                // if (response.status_code === 200) {
+                //     await router.push({ path: '/' })
+                // } else if (response.status_code === 422) {
+                //     errorResponse.value = response.error_response
+                // }
+            } catch (response) {
+                console.log(response)
+            }
         } else {
             return false
         }
